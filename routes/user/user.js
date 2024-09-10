@@ -91,7 +91,7 @@ router.put("/:id", isAdmin, (req, res) => {
 });
 
 router.delete("/:id", isAdmin, (req, res) => {
-  db.run("DELETE FROM user WHERE id = ?", req.params.id, (err) => {
+  db.run("DELETE FROM users WHERE id = ?", req.params.id, (err) => {
     if (err) {
       res.status(400).json({ error: res.message });
       return;
